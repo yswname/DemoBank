@@ -1,0 +1,46 @@
+spring:
+  application:
+      name: DemoBankRespositoryApp
+  datasource:
+        name: test
+        url:  jdbc:mysql://192.168.90.197:3306/bank_db
+        username: root
+        password: root
+        driver-class-name:  com.mysql.jdbc.Driver
+## 该配置节点为独立的节点，有很多同学容易将这个配置放在spring的节点下，导致配置无法被识别
+mybatis:
+    mapper-locations: classpath:mapping/*.xml  #注意：一定要对应mapper映射xml文件的所在路径
+    type-aliases-package: cn.com.demo.ssm.bank.entity  # 注意：对应实体类的路径
+logging:
+  level:
+    cn:
+      com:
+        demo:
+          ssm:
+            bank:
+              mapper: debug
+
+
+
+
+
+
+dubbo:
+  registry:
+    protocol: zookeeper
+    address: 192.168.13.145:2181,192.168.13.145:2182,192.168.13.145:2183
+    id: DemoBankRespository-Registry
+  protocol:
+    port: 12345
+    name: dubbo
+    id: dubbo
+    status: server
+  application:
+    name: DemoBankRespository-Provider
+    id: DemoBankRespository-Provider
+    qos-enable: true
+    qos-port: 22222
+  scan:
+    basePackages: cn.com.demo.ssm.bank.respository.impl
+  service:
+    version: 1.0.0
