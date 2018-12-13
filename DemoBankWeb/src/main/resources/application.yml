@@ -1,0 +1,47 @@
+#server.port=9090
+server:
+    port: 9090 
+spring:
+  http:
+      multipart:
+         maxFileSize: 10Mb
+         maxRequestSize: 10Mb
+  application:
+      name: DemoBankWebApp
+  mvc:
+      view:
+         prefix: /WEB-INF/jsp/
+         suffix: .jsp
+
+dubbo:
+  application:
+    id: DemoBankWeb-Consumer
+    name: DemoBankWeb-Consumer
+    version: 1.0.0
+  registry:
+    protocol: zookeeper
+    address: 192.168.13.145:2181,192.168.13.145:2182,192.168.13.145:2183
+    id: DemoBankWeb-Consumer-Registry
+management:
+  endpoint:
+    dubbo-configs:
+      enabled: true
+    dubbo:
+      enabled: true
+    dubbo-services:
+      enabled: true
+    dubbo-properties:
+      enabled: true
+    dubbo-shutdown:
+      enabled: true
+    dubbo-references:
+      enabled: true
+  health:
+    dubbo:
+      status:
+        defaults: memory
+        extras: load,threadpool
+  endpoints:
+    web:
+      exposure:
+        include: '*'
