@@ -4,9 +4,9 @@ import java.util.List;
 
 import cn.com.demo.ssm.bank.entity.BankCustomerInfo;
 
-public interface IBankCustomerInfoRespository {
+public interface IBankCustomerInfoRespository {// 4444用111戶444111
 	/**
-	 * 添加一个444用户4444信息
+	 * 添加一个444用11111户444411111信息
 	 * */
     public BankCustomerInfo addCustomerInfo(BankCustomerInfo customer);
     /**
