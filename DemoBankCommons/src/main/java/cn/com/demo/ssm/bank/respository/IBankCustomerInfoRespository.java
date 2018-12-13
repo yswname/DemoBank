@@ -6,7 +6,13 @@ import cn.com.demo.ssm.bank.entity.BankCustomerInfo;
 
 public interface IBankCustomerInfoRespository {// 4444用111戶444111
 	/**
-	 * 添加用户
+	 * 111111
+	 * 第四個人
+	 * 44444
+	 * 添4444加一个444用11111户444411111信息
+	 * 1111111
+	 * 第四個人
+	 * 44444
 	 * */
     public BankCustomerInfo addCustomerInfo(BankCustomerInfo customer);
     /**
