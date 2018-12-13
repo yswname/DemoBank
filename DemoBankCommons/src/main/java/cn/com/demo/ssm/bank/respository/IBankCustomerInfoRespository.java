@@ -9,5 +9,8 @@ public interface IBankCustomerInfoRespository {
 	 * 添加一个用户信息
 	 * */
     public BankCustomerInfo addCustomerInfo(BankCustomerInfo customer);
+    /**
+     * 查询所有的用户列表
+     * */
     public List<BankCustomerInfo> selectAllCustomer();
 }
